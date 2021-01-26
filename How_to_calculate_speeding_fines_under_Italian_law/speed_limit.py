@@ -1,4 +1,4 @@
-def main():
+def calcola():
     print(
         "Hai violato il Codice della Strada? Scopri quanti punti ti verranno decurtati e a quanto ammontano le sanzioni amministrative pecuniarie.")
 
@@ -31,7 +31,7 @@ def main():
 
     restart = input("Vuoi calcolare di nuovo se hai violato il Codice della Strada? ")
     if restart == "sì" or restart == "si":
-        main()
+        calcola()  # nice use of recursion
 
     else:
         print("Arrivederci!")
@@ -39,4 +39,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    calcola()
