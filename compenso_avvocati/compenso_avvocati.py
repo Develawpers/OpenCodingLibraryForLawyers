@@ -1,4 +1,8 @@
-# By Biagio Distefano @ Law Engineering Systems s.r.l.
+__author__ = "Biagio Distefano"
+__copyright__ = "Copyright 2021, Law Engineering Systems s.r.l."
+__license__ = "MIT"
+__version__ = "0.0.1"
+__email__ = "b.distefano@lawengineeringsystems.com"
 
 import math
 
