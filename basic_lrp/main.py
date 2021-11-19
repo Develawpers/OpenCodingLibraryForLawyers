@@ -12,7 +12,7 @@ A: sure, just add whatever pattern you want and adapt the resolver
 Q: can this work with very weird and more complex references?
 A: technically yes, but good luck with that.
 
-Q: O need to parse a shitload of documents/webpages professionally and very precisely, how can I do this?
+Q: I need to parse a shitload of documents/webpages professionally and very precisely, how can I do this?
 A: contact me: b.distefano@lawengineeringsystems.com
 """
 
@@ -50,8 +50,7 @@ URN_NIR = {
 def get_matches(text):
     matches = []
     for k, v in ALL_PATTERNS.items():
-        if m := re.search(v, text, re.IGNORECASE):
-            matches.append(m)
+        matches.extend(list(re.finditer(v, text, re.IGNORECASE)))
     return matches
 
 
