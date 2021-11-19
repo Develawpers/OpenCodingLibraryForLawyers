@@ -63,7 +63,7 @@ Re's library documentation: https://docs.python.org/3/library/re.html
 We're going to look for patterns such as `art. 844 del codice civile`. We can build this in a modular fashion.
 
 First we crete the general patterns for the `codici` we want to match,
-making sure we use named groups `(?P<name>pattern)` and use those names as keys of our dict.
+making sure we use named groups `(?P<name>pattern)` and use those names as keys of our `dict`.
 
 ```python
 PATTERN_CODICI = {
@@ -125,7 +125,7 @@ def hyperlinker(filepath):
     ...
 ```
 
-Let's have a look to our `get_matches()` function
+In our `get_matches()` function we simply iterate over all of our patterns and use `re.finditer()` with them:
 
 ```python
 def get_matches(text):
