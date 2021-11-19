@@ -57,6 +57,11 @@ Re's library documentation: https://docs.python.org/3/library/re.html
 
 ## In depth:
 
+First thigs first
+
+```python
+import re
+```
 
 ### setting up our patterns
 
