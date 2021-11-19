@@ -51,7 +51,26 @@ def get_matches(text):
     matches = []
     for k, v in ALL_PATTERNS.items():
         matches.extend(list(re.finditer(v, text, re.IGNORECASE)))
-    return matches
+    return purge_overlaps(matches)
+
+
+def purge_overlaps(matches):
+    matches.sort(key=lambda x: x.start())
+    purged = []
+    if len(matches) > 1:
+        purged.append(matches[0])
+        for m in matches[1:]:
+            if m.start() >= purged[-1].end():
+                purged.append(m)
+            elif m.end() >= purged[-1].end():
+                m_len = m.end() - m.start()
+                last_len = purged[-1].end() - purged[-1].start()
+                if m_len > last_len:
+                    purged.pop()
+                    purged.append(m)
+    else:
+        return matches
+    return purged
 
 
 def resolve_matches(*matches):
